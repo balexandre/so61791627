@@ -1,8 +1,8 @@
 // RESPONSES FILE
 // ============================================================
 exports.paging = (sequelizeResult, page, limit) => ({
-    page: page,
-    limit: limit,
-    total: sequelizeResult.count,
-    data: sequelizeResult.rows,
-})
+  page,
+  limit,
+  total: sequelizeResult.count,
+  data: sequelizeResult.rows,
+});

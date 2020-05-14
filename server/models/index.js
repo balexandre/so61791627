@@ -17,7 +17,7 @@ const sequelize = new Sequelize(process.env.DB_DATABASE, process.env.DB_USER, pr
     max: 5,
     min: 0,
     idle: 10000,
-  }
+  },
 });
 
 // CAN CONNECT?
@@ -25,24 +25,26 @@ const sequelize = new Sequelize(process.env.DB_DATABASE, process.env.DB_USER, pr
 sequelize
   .authenticate()
   .then(() => {
+    // eslint-disable-next-line no-console
     console.log('Connection has been established successfully.');
   })
-  .catch(err => {
+  .catch((err) => {
+    // eslint-disable-next-line no-console
     console.error('Unable to connect to the database:', err.message);
   });
 
 // BIND MODELS FROM FILES
 // ============================================================
 fs.readdirSync(__dirname)
-  .filter(file => file.indexOf('.') !== 0 && file !== 'index.js' && file.slice(-3) === '.js')
-  .forEach(file => {
+  .filter((file) => file.indexOf('.') !== 0 && file !== 'index.js' && file.slice(-3) === '.js')
+  .forEach((file) => {
     const model = sequelize.import(path.join(__dirname, file));
     db[model.name] = model;
   });
 
 // BIND ASSOCIATIONS
 // ============================================================
-Object.keys(db).forEach(modelName => {
+Object.keys(db).forEach((modelName) => {
   if ('associate' in db[modelName]) {
     db[modelName].associate(db);
   }
@@ -55,5 +57,5 @@ module.exports = _.extend(
     sequelize,
     Sequelize,
   },
-  db
+  db,
 );

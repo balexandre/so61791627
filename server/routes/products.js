@@ -1,8 +1,8 @@
 // PRODUCTS ROUTE FILE
 // ============================================================
-const router = require("express").Router();
-const util = require("./../utilities");
-const db = require("./../models");
+const router = require('express').Router();
+const util = require('../utilities');
+const db = require('../models');
 
 // lists all products
 // GET /products
@@ -18,8 +18,8 @@ const listAllProducts = async (req, res) => {
         active: '1',
       },
       offset: limit * page,
-      limit: limit,
-      order: [["id", "ASC"]],
+      limit,
+      order: [['id', 'ASC']],
     });
 
     res.json(util.response.paging(result, page, limit));
@@ -28,6 +28,6 @@ const listAllProducts = async (req, res) => {
   }
 };
 
-router.get("/products", listAllProducts);
+router.get('/products', listAllProducts);
 
 module.exports = router;
