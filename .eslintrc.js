@@ -15,6 +15,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-      'max-len': 'off',
+    'max-len': ['error', { code: 120 }],
+    indent: ['error', 2],
   },
 };
