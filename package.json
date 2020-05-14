@@ -5,6 +5,7 @@
   "author": "Bruno Alexandre",
   "license": "ISC",
   "scripts": {
+    "lint": "./node_modules/.bin/eslint ./**/*.js",
     "start": "node ./server/server.js"
   },
   "dependencies": {
@@ -15,5 +16,10 @@
     "morgan": "^1.10.0",
     "mysql2": "^2.1.0",
     "sequelize": "^5.21.8"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2"
   }
 }
