@@ -5,7 +5,8 @@
   "author": "Bruno Alexandre",
   "license": "ISC",
   "scripts": {
-    "lint": "./node_modules/.bin/eslint ./**/*.js",
+    "lint": "npx eslint ./**/*.js",
+    "lint:fix": "npx eslint ./**/*.js --fix",
     "start": "node ./server/server.js"
   },
   "dependencies": {
