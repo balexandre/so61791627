@@ -1,0 +1,10 @@
+# To be used with REST CLient for VS Code Extension
+# https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+
+@HOST = http://localhost:3000
+
+GET {{HOST}}/products
+Content-Type: application/json
+###
+GET {{HOST}}/products?limit=2&page=2
+Content-Type: application/json
